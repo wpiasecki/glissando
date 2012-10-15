@@ -10,8 +10,8 @@
 @groovy.transform.ToString
 class PlayInstruction extends Instruction 
 {
-  String score
-  Integer from = 0
-  Integer to = -1
+  Map score
+  def from = 0
+  def to = -1
   String command = 'play'
 }

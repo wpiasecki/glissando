@@ -8,7 +8,7 @@
  */
 class StringMixin
 {
-	def	getAt( IntRange range )
+	String[] getAt( IntRange range )
 	{
 		split(/\|/)[range]
 	}

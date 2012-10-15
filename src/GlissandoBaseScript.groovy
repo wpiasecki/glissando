@@ -35,7 +35,7 @@ abstract class GlissandoBaseScript extends Script
 	{
 		log.debug "gfugue player.play map: $scoreMap"
 		
-		def instruction = new PlayInstruction( score: scoreMap.join() )
+		def instruction = new PlayInstruction( score: scoreMap )
 		
 		log.debug "scoreMap.join: ${scoreMap.join()}"
 		
@@ -43,10 +43,7 @@ abstract class GlissandoBaseScript extends Script
 		
 		log.debug "base script.play instructions: $instructions"
 		
-		def to = { Integer end -> instruction.to = end }
-		def from = { Integer start -> instruction.from = start; [to: to] }
-		
-		[from: from, to: to]
+		CommandChain.playChain instruction 
 	}
 	
 	

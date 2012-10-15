@@ -59,6 +59,7 @@ else
 
 /*
  * instructions interpretation
+ * FIXME: player doesn't know how to handle the third playing onward
  */
 def player = new Player()
 
@@ -71,10 +72,10 @@ instructions.each { instruction ->
     switch (command) 
     {
       case 'play':
-      
+      	
         log.debug 'play'
         
-        def splitedScore = score.split( /\|/ )[from..to].join(" ")
+        def splitedScore = score[ from..to ].join(" ")
         
         log.debug "splitedScore: $splitedScore"
         
@@ -94,6 +95,4 @@ instructions.each { instruction ->
     }
   }
 }
-
-
 

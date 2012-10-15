@@ -8,15 +8,15 @@
  */
 class MapMixin 
 {
-	Log log
+	Log log = new Log()
 	
-  def join() 
+  String join() 
 	{ 
 		collect { Map.Entry it -> it.value }.join(" ") 
 	}
 	
   
-  def getAt( IntRange range )
+  String[] getAt( IntRange range )
 	{ 
     log.debug "playing from ${range.first()} to ${range.last()}"
     log.debug "${join().split(/\|/)[range]}"
@@ -24,17 +24,23 @@ class MapMixin
   }
 	
   
-  def getAt( Integer measure )
+  String[] getAt( Integer measure )
 	{ 
     log.debug "getAt int ${join().split(/\|/)[measure] }"
     join().split(/\|/)[measure] 
   }
 	
+	
+	List<String> collect() 
+	{ 
+		collect { Map.Entry i -> i.value } 
+	}
+	
   
-  def getAt( List list )
+  List<String> getAt( List list )
 	{ 
     log.debug "getAt list $list"
-    findAll { key, value -> key in list }
+    findAll { key, value -> key in list }.collect()
   }
   
 }
