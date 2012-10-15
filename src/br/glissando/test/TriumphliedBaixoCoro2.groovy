@@ -146,6 +146,10 @@ mov1.K = """
     
 """
 
+play mov1 to A
+play mov1 from 100 to 101
+play mov1 to 20
+play mov1 from F to G
 
 //play mov1[ 193..-1 ]
 //saveMidi mov1, "baixo_coro2_mov1.mid"

@@ -1,1 +1,14 @@
-test for git
+Glissando is a small DSL on top of JFugue. 
+Right now it can do simple things like:
+
+    play movement1 from F to G
+
+and
+
+    saveMidi score, "score.midi"
+
+Its usage is through line command:
+
+	Glissando.groovy Triumphlied.groovy
+
+(Hence the shebang syntax in Glissando.groovy)
